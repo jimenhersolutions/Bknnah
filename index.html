@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures proper viewing on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bknnah Ethiopian Restaurant - Home</title>
+    <!-- Load Tailwind CSS for fast, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define the Inter font as default */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Remove default margin/padding */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* Add padding to the top for the fixed header (h-16) */
+            padding-top: 64px; 
+            /* Adjust padding for the new, smaller fixed footer (h-16 equivalent) */
+            padding-bottom: 64px; 
+        }
+        /* Class for full-width carousel */
+        .full-width-carousel {
+            width: 100vw; /* Viewport Width (full window width) */
+            margin-left: calc(50% - 50vw); /* Trick to compensate for body margin if it exists */
+        }
+        /* Elegant font class for the logo */
+        .elegant-font {
+            font-family: 'Georgia', serif; /* An elegant font choice */
+            letter-spacing: 0.1em; /* Add some letter spacing */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- FIXED AND OVERLAID NAVIGATION BAR (HEADER) -->
+    <header class="fixed top-0 left-0 right-0 z-30 bg-gray-900 shadow-xl h-16 flex items-center justify-center">
+        <nav class="container mx-auto px-4 sm:px-8 flex justify-center items-center h-full">
+            <a href="#" class="text-white text-3xl font-light uppercase elegant-font tracking-widest">
+                Bknnah Ethiopian Restaurant
+            </a>
+            <!-- Navigation menu could be added here later (Home, Menu, Contact) -->
+        </nav>
+    </header>
+
+    <!-- 
+        The carousel is placed outside the central 'main-content' container
+        so it can occupy the full window width.
+    -->
+    
+    <!-- Image Carousel (Full Width and Auto-rotation every 4 seconds) -->
+    <div id="image-carousel" class="relative w-full overflow-hidden shadow-2xl mx-auto full-width-carousel" style="aspect-ratio: 16/9;">
+        <div class="carousel-track absolute inset-0">
+            <!-- Image 1 -->
+            <img src="https://i.imgur.com/91pY1b3.jpeg" 
+                 alt="Ethiopian food on Injera" 
+                 class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" 
+                 data-index="0"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x450/38bdf8/ffffff?text=Image+1+Not+Loaded'">
+            
+            <!-- Image 2 -->
+            <img src="https://i.imgur.com/jAZBpzu.jpeg" 
+                 alt="Spices and ingredients" 
+                 class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" 
+                 data-index="1"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x450/4f46e5/ffffff?text=Image+2+Not+Loaded'">
+            
+            <!-- Image 3 -->
+            <img src="https://i.imgur.com/1jriLbO.jpeg" 
+                 alt="Traditional Ethiopian coffee ceremony" 
+                 class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" 
+                 data-index="2"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x450/10b981/ffffff?text=Image+3+Not+Loaded'">
+        </div>
+
+        <!-- Navigation indicators (Dots) -->
+        <div id="carousel-dots" class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
+            <button class="dot-indicator w-3 h-3 bg-white rounded-full transition duration-300 shadow-lg" data-index="0"></button>
+            <button class="dot-indicator w-3 h-3 bg-white/30 rounded-full transition duration-300 shadow-lg" data-index="1"></button>
+            <button class="dot-indicator w-3 h-3 bg-white/30 rounded-full transition duration-300 shadow-lg" data-index="2"></button>
+        </div>
+    </div>
+
+
+    <!-- Main content container (Centered for all subsequent content) -->
+    <div id="main-content" class="container mx-auto p-4 sm:p-8">
+
+        <!-- 
+            *** START ADDING YOUR CODE HERE INSIDE THIS MAIN DIV ***
+        -->
+
+        <!-- Persuasive Text Block with Background Image -->
+        <section class="py-24 text-center relative bg-cover bg-center rounded-xl my-8" 
+                 style="background-image: url('https://i.imgur.com/j9xKdga.jpeg');">
+            
+            <!-- Overlay for better text readability -->
+            <div class="absolute inset-0 bg-gray-900 opacity-80 rounded-xl"></div>
+            
+            <!-- Text Content -->
+            <div class="relative z-10 max-w-4xl mx-auto px-4">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                    A Culinary Journey to the Heart of Ethiopia
+                </h2>
+                <p class="text-xl text-gray-300 mx-auto leading-relaxed">
+                    Step into Bknnah, where every dish is a celebration of rich tradition and vibrant flavors. 
+                    We meticulously craft authentic Ethiopian cuisine, from the tangy, sponge-like embrace of fresh Injera 
+                    to our slow-cooked, deeply spiced Wots and Tibs. Our ingredients are sourced with care, 
+                    ensuring a genuine, unforgettable experience that transports you directly to Addis Ababa. 
+                    This is more than a meal—it's an authentic, shared ceremony of taste and warmth, served with passion.
+                </p>
+            </div>
+        </section>
+
+        <!-- Specials Section -->
+        <section class="py-16">
+            <h2 class="text-4xl font-extrabold text-center text-yellow-500 mb-12 uppercase tracking-wider">
+                This Week's Chef Specials
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Special Dish 1: The Buna Ceremony (Coffee) -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                    <img src="https://i.imgur.com/1jriLbO.jpeg" 
+                         alt="Traditional Ethiopian Coffee Ceremony" 
+                         class="w-full h-56 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x300/38bdf8/ffffff?text=Coffee+Ceremony'">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">The Buna Ceremony</h3>
+                        <p class="text-yellow-500 font-semibold mb-4">Cultural Experience</p>
+                        <p class="text-gray-400 text-sm">
+                            A truly authentic Ethiopian coffee experience. Our traditional coffee ceremony is a celebration of community and flavor, featuring freshly roasted beans, incense, and delicious small bites.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Special Dish 2: Doro Wot Deluxe -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                    <img src="https://i.imgur.com/wQrJIKe.jpeg" 
+                         alt="Doro Wot, Ethiopian Chicken Stew" 
+                         class="w-full h-56 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x300/4f46e5/ffffff?text=Doro+Wot+Deluxe'">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Doro Wot Deluxe</h3>
+                        <p class="text-yellow-500 font-semibold mb-4">Signature Chicken Stew</p>
+                        <p class="text-gray-400 text-sm">
+                            Our signature chicken stew, marinated for 48 hours in Berbere spice, slow-cooked with boiled eggs, and served on soft, warm Injera. A deep, soulful, and unforgettable flavor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Special Dish 3: Mushroom Tibs Fusion -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                    <img src="https://i.imgur.com/tyXRRLt.jpeg" 
+                         alt="Mushroom Vegetable Stir-fry" 
+                         class="w-full h-56 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x300/f59e0b/ffffff?text=Chef\'s+Secret+Special'">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Mushroom Tibs Fusion</h3>
+                        <p class="text-yellow-500 font-semibold mb-4">Vegetarian Delight</p>
+                        <p class="text-gray-400 text-sm">
+                            A vibrant vegetarian stir-fry of fresh mushrooms, caramelized onions, green chilies, and Turmeric, quickly sautéed in clarified butter. A lighter, yet profoundly flavorful choice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History and Culture Section -->
+        <section class="py-16 border-t border-gray-800">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-10 tracking-tight">
+                The Heritage of Ethiopian Dining
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: History Text -->
+                <div>
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        Ethiopian cuisine is not just about ingredients; it is a profound expression of culture, history, and community. At its heart lies **Injera**, the large, spongy flatbread made from the ancient grain teff. Fermented for several days, teff gives Injera its unique, slightly sour tang, making it the perfect base and tool for scooping up the savory dishes.
+                    </p>
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        The preparation of dishes like Wot (stews) and Tibs (sautés) is often a slow, meticulous process, heavily reliant on the complex spice blend **Berbere**. This mix, featuring chili peppers, garlic, ginger, basil, and many other spices, is the soul of Ethiopian flavor, embodying centuries of culinary tradition.
+                    </p>
+                </div>
+                <!-- Right Column: Visual of Teff/Spices/Serving -->
+                <div class="rounded-xl shadow-2xl overflow-hidden">
+                    <img src="https://i.imgur.com/jAZBpzu.jpeg" 
+                         alt="A variety of Ethiopian spices and ingredients" 
+                         class="w-full h-full object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/ffffff?text=Culture+Image'">
+                </div>
+            </div>
+            <div class="mt-8 text-center max-w-4xl mx-auto">
+                 <h3 class="text-3xl font-semibold text-yellow-500 mb-4">
+                    The Ceremony of Shared Meals (Gursha)
+                </h3>
+                <p class="text-lg text-gray-400 leading-relaxed">
+                    Dining in Ethiopia is inherently communal. Food is typically served on a large platter of Injera, shared by everyone at the table. This tradition emphasizes friendship and loyalty. A beautiful example of this is **Gursha**, the act of hand-feeding a close friend or loved one, symbolizing the bonds of respect and love between diners. At Bknnah, we invite you to partake in this rich, shared experience.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Location and Map Section -->
+        <section class="py-16 border-t border-gray-800">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-10 tracking-tight">
+                Location & Reservations
+            </h2>
+
+            <!-- Map Container (to control aspect ratio) -->
+            <div class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl" style="height: 500px;">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=60+Carden+St,+Guelph,+ON+N1H 3A2,+Canada&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Bknnah Ethiopian Restaurant Location Map"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="mt-10 text-center text-lg">
+                <p class="text-yellow-500 font-semibold mb-2">Find Us At:</p>
+                <p class="text-gray-300">60 Carden St, Guelph, ON N1H 3A2, Canada</p>
+                <p class="text-gray-300 mt-4">For Reservations, please call: <a href="tel:+15195551234" class="text-yellow-500 hover:text-yellow-400 transition">(519) 555-1234</a></p>
+            </div>
+        </section>
+
+
+        <!-- 
+            *** END OF YOUR CODE ***
+        -->
+
+    </div>
+
+    <!-- FIXED MOBILE NAVIGATION BAR (FOOTER) - Aesthetic Redesign -->
+    <footer class="fixed bottom-0 left-0 right-0 z-40 bg-gray-900 shadow-3xl border-t border-yellow-500/30 h-16">
+        <div class="container mx-auto h-full flex justify-around items-center">
+            
+            <!-- Button 1: Call Us (Phone Symbol) -->
+            <a href="tel:+12268203104" aria-label="Llamar al restaurante"
+               class="flex-1 h-full flex flex-col justify-center items-center text-gray-400 hover:text-yellow-500 transition duration-300">
+                <!-- Phone Icon SVG (Icono de Teléfono) - Smaller (24x24) and Lighter Stroke (2) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72 13.33 13.33 0 0 0 .44 2.37 2 2 0 0 1-.41 2.14l-1.12 1.12a19 19 0 0 0 9 9l1.12-1.12a2 2 0 0 1 2.14-.41 13.33 13.33 0 0 0 2.37.44A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span class="text-xs font-medium mt-0.5 hidden sm:inline-block">Llamar</span>
+            </a>
+
+            <!-- Button 2: Order Now (Shopping Cart Symbol) - Highlighted as primary CTA -->
+            <a href="https://bknnah-ethiopian-eritrean-cuisine.square.site/" target="_blank" aria-label="Pedir ahora en línea"
+               class="flex-1 h-full flex flex-col justify-center items-center text-yellow-500 transition duration-300">
+                <!-- Shopping Cart Icon SVG (Icono de Carrito de Compras) - Smaller (24x24) and Lighter Stroke (2) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"/>
+                </svg>
+                <span class="text-xs font-medium mt-0.5 hidden sm:inline-block">Pedir Ahora</span>
+            </a>
+
+            <!-- Button 3: Menu (List Symbol) - Now triggers the modal -->
+            <a href="#" onclick="showMenuModal(event)" aria-label="Ver el menú"
+               class="flex-1 h-full flex flex-col justify-center items-center text-gray-400 hover:text-yellow-500 transition duration-300">
+                <!-- Menu Icon SVG (Icono de Menú) - Smaller (24x24) and Lighter Stroke (2) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="18" y2="18"/>
+                </svg>
+                <span class="text-xs font-medium mt-0.5 hidden sm:inline-block">Menú</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal para el Menú (pantalla completa) -->
+    <div id="menu-modal" class="fixed inset-0 z-50 bg-gray-900/95 hidden flex justify-center items-center p-4 overflow-auto" onclick="closeMenuModal(event)">
+        <div class="relative max-w-full max-h-full w-full flex flex-col justify-center items-center" onclick="event.stopPropagation()">
+            <!-- Imagen del Menú -->
+            <img src="https://i.imgur.com/R4r2mAG.jpeg" 
+                 alt="Menú completo del restaurante Bknnah" 
+                 class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" 
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x1200/ef4444/ffffff?text=Error+al+Cargar+el+Menú'; this.alt='Error al cargar el menú.'">
+
+            <!-- Botón de Cierre -->
+            <button id="close-modal-btn" onclick="closeMenuModal()" 
+                    class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white p-3 rounded-full shadow-lg transition duration-300 z-50">
+                <!-- Close Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        // JavaScript logic for carousel functionality
+        const images = document.querySelectorAll('.carousel-img');
+        const dots = document.querySelectorAll('.dot-indicator');
+        let currentIndex = 0;
+        const intervalTime = 4000; // 4 seconds
+
+        // Function to display the image at a specific index
+        function showImage(index) {
+            // Ensure index is within limits (loop)
+            currentIndex = (index + images.length) % images.length;
+
+            images.forEach((img, i) => {
+                // Toggle image visibility using opacity classes
+                if (i === currentIndex) {
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                    img.style.zIndex = 10; // Ensure the visible image is on top
+                } else {
+                    img.classList.remove('opacity-100');
+                    img.classList.add('opacity-0');
+                    img.style.zIndex = 1; // Hidden images go to the back
+                }
+            });
+
+            // Update dot indicators to reflect the current image
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.classList.add('bg-white');
+                    dot.classList.remove('bg-white/30');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/30');
+                }
+            });
+        }
+
+        // Function to move to the next image
+        function nextImage() {
+            showImage(currentIndex + 1);
+        }
+
+        // Set the interval for auto-rotation (4000ms = 4 seconds)
+        setInterval(nextImage, intervalTime);
+
+        // Allow navigation with dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                showImage(index);
+            });
+        });
+
+        // Initialize the first image
+        showImage(0);
+
+
+        // --- New functions for Menu Modal ---
+        const menuModal = document.getElementById('menu-modal');
+
+        /**
+         * Muestra el modal del menú a pantalla completa.
+         * @param {Event} event - El evento de clic.
+         */
+        function showMenuModal(event) {
+            // Evita que el enlace navegue a una URL vacía
+            if (event) event.preventDefault(); 
+            menuModal.classList.remove('hidden');
+        }
+
+        /**
+         * Oculta el modal del menú.
+         * @param {Event} [event] - Opcional. El evento de clic para detectar clics fuera del contenido.
+         */
+        function closeMenuModal(event) {
+            // Si se proporciona un evento y no se hizo clic directamente en el fondo del modal, no hacemos nada.
+            // Esto permite hacer clic fuera de la imagen para cerrar, pero no si se hace clic en la propia imagen.
+            if (event && event.target !== menuModal) return; 
+            menuModal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
